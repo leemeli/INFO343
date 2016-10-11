@@ -1,0 +1,39 @@
+Melodys-MacBook-Air-2:challenges-leemeli melodylee1$ pwd
+/Users/melodylee1/desktop/Git Challenge/challenges-leemeli
+Melodys-MacBook-Air-2:challenges-leemeli melodylee1$ cd character
+Melodys-MacBook-Air-2:character melodylee1$ pwd
+/Users/melodylee1/desktop/Git Challenge/challenges-leemeli/character
+Melodys-MacBook-Air-2:character melodylee1$ 
+Melodys-MacBook-Air-2:character melodylee1$ pwd
+/Users/melodylee1/desktop/Git Challenge/challenges-leemeli/character
+Melodys-MacBook-Air-2:character melodylee1$ mkdir img
+Melodys-MacBook-Air-2:character melodylee1$ cp ../../.gitignore 
+usage: cp [-R [-H | -L | -P]] [-fi | -n] [-apvX] source_file target_file
+       cp [-R [-H | -L | -P]] [-fi | -n] [-apvX] source_file ... target_directory
+Melodys-MacBook-Air-2:character melodylee1$ cp ../../.gitignore /Users/melodylee1/desktop/Git Challenge/challenges-leemeli/character/img
+usage: cp [-R [-H | -L | -P]] [-fi | -n] [-apvX] source_file target_file
+       cp [-R [-H | -L | -P]] [-fi | -n] [-apvX] source_file ... target_directory
+Melodys-MacBook-Air-2:character melodylee1$ cp /Users/melodylee1/desktop/Git Challenge/challenges-leemeli/.gitignore /Users/melodylee1/desktop/Git Challenge/challenges-leemeli/character/img/
+usage: cp [-R [-H | -L | -P]] [-fi | -n] [-apvX] source_file target_file
+       cp [-R [-H | -L | -P]] [-fi | -n] [-apvX] source_file ... target_directory
+Melodys-MacBook-Air-2:character melodylee1$ cp /Users/melodylee1/desktop/Git Challenge/challenges-leemeli/.gitignore /Users/melodylee1/desktop/Git Challenge/challenges-leemeli/character/img
+usage: cp [-R [-H | -L | -P]] [-fi | -n] [-apvX] source_file target_file
+       cp [-R [-H | -L | -P]] [-fi | -n] [-apvX] source_file ... target_directory
+Melodys-MacBook-Air-2:character melodylee1$ cp "/Users/melodylee1/desktop/Git Challenge/challenges-leemeli/.gitignore" "cp /Users/melodylee1/desktop/Git Challenge/challenges-leemeli/.gitignore /Users/melodylee1/desktop/Git Challenge/challenges-leemeli/character/img"
+cp: cp /Users/melodylee1/desktop/Git Challenge/challenges-leemeli/.gitignore /Users/melodylee1/desktop/Git Challenge/challenges-leemeli/character/img: No such file or directory
+Melodys-MacBook-Air-2:character melodylee1$ cp "/Users/melodylee1/desktop/Git Challenge/challenges-leemeli/.gitignore" "cp /Users/melodylee1/desktop/Git Challenge/challenges-leemeli/.gitignore /Users/melodylee1/desktop/Git Challenge/challenges-leemeli/character/img"
+cp: cp /Users/melodylee1/desktop/Git Challenge/challenges-leemeli/.gitignore /Users/melodylee1/desktop/Git Challenge/challenges-leemeli/character/img: No such file or directory
+Melodys-MacBook-Air-2:character melodylee1$ cp "/Users/melodylee1/desktop/Git Challenge/challenges-leemeli/.gitignore" "cp /Users/melodylee1/desktop/Git Challenge/challenges-leemeli/.gitignore /Users/melodylee1/desktop/Git Challenge/challenges-leemeli/character/img"
+cp: cp /Users/melodylee1/desktop/Git Challenge/challenges-leemeli/.gitignore /Users/melodylee1/desktop/Git Challenge/challenges-leemeli/character/img: No such file or directory
+Melodys-MacBook-Air-2:character melodylee1$ cp "/Users/melodylee1/desktop/Git Challenge/challenges-leemeli/.gitignore" "/Users/melodylee1/desktop/Git Challenge/challenges-leemeli/character/img"
+Melodys-MacBook-Air-2:character melodylee1$ cat "/Users/melodylee1/desktop/Git Challenge/challenges-leemeli/characters/img/.gitignore"
+cat: /Users/melodylee1/desktop/Git Challenge/challenges-leemeli/characters/img/.gitignore: No such file or directory
+Melodys-MacBook-Air-2:character melodylee1$ pwd
+/Users/melodylee1/desktop/Git Challenge/challenges-leemeli/character
+Melodys-MacBook-Air-2:character melodylee1$ cd img
+Melodys-MacBook-Air-2:img melodylee1$ pwd
+/Users/melodylee1/desktop/Git Challenge/challenges-leemeli/character/img
+Melodys-MacBook-Air-2:img melodylee1$ cat .gitignore
+.DS_Store
+node_modules
+.vscodeMelodys-MacBook-Air-2:img melodylee1$ 
