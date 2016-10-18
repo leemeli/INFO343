@@ -17,3 +17,162 @@
 
 
 /* Your CSS rules go here */
+body {
+    font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: Raleway, Helvetica, Arial, sans-serif;
+}
+
+
+/* H1 Rules */
+h1 {
+    color: white;
+    font-weight: 100;
+    margin: 0 0 0 0px;
+}
+@media (min-width: 768px) {
+    h1 {
+        color: black;
+        font-size: 3em;
+    }
+}
+@media (min-width: 992px) {
+    h1 {
+        font-size: 4em;
+    }
+}
+@media (min-width: 1200px) {
+    h1 {
+        font-size: 5em;
+    }
+}
+
+/* Paragraph Rules */
+p {
+    color: white;
+    line-height: 1.43;
+    margin-top: 0px;
+    margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+    p {
+        color: black;
+        max-width: 50%;
+    }
+}
+@media (min-width: 992px) {
+    
+}
+@media (min-width: 1200px) {
+    
+}
+
+/* "Get Yours Now" Button Rules */
+
+#getYours {
+    display: none;
+}
+@media (min-width: 768px) {
+    #getYours {
+        display: block;
+        font-family: Raleway, Helvetica, Arial, sans-serif;
+        background-color: #814236;
+        border: #391d18;
+        padding: 10px;
+    }
+    #getYours:hover {
+         background-color: #5d3027;
+    }
+    a:link, a:visited #getYours, a:hover #getYours {
+        color: white;
+        text-decoration: none;
+    }
+}
+
+/* Header Rules */
+header {
+    padding: 20px;
+    margin-top: 2.5rem;
+    background: brown; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#391D18, #814236); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#391D18, #814236); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#391D18, #814236); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#391D18, #814236); /* Standard syntax */
+}
+@media (min-width: 768px) {
+    header {
+        padding: 100px 20px 20px 50px;
+        margin-top: 0px;
+        background-image: url("../img/pencil-header-sm.jpg");
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-size: cover;
+    }
+
+}
+@media (min-width: 992px) {
+    header {
+        background-image: url("../img/pencil-header-md.jpg");
+    }
+}
+@media (min-width: 1200px) {
+    header {
+        background-image: url("../img/pencil-header-lg.jpg");
+    }
+}
+
+/* Navigation Bar Rules */
+
+#navi {
+    z-index: 5;
+    color: white;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 1.9rem;
+    background-color: #391D18;
+    padding-top: 15px;
+}
+#navi ol {
+    padding: 20px 3% 0px 20px;
+}
+#navi li, #navi ol {
+    display: inline;
+    list-style: none;
+}
+#navi a:link, #navi a:visited{
+    color: #dfdfdf;
+    text-decoration: none;
+}
+#navi a:hover {
+    color: white;
+}
+@media (min-width: 768px) {
+    #navi {
+        z-index: -1;
+    }
+}
+#shoppingCart {
+    float: right;
+    margin-right: 20px;
+}
+
+/* Section Rules */
+section {
+    padding: 20px;
+    margin-top: 2.5rem;
+}
+
+@media (min-width: 768px) {
+    
+}
+@media (min-width: 992px) {
+    
+}
+@media (min-width: 1200px) {
+    
+}
