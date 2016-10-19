@@ -1,22 +1,28 @@
 /* general container element to constrain content width on wider screens */
+
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto; 
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
 @media (min-width: 768px) {
-    .container { width: 750px; } 
+    .container {
+        width: 750px;
+    }
 }
 @media (min-width: 992px) {
-    .container { width: 970px; } 
+    .container {
+        width: 970px;
+    }
 }
 @media (min-width: 1200px) {
-    .container { width: 1170px; } 
+    .container {
+        width: 1170px;
+    }
 }
-
-
 /* Your CSS rules go here */
+
 body {
     font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 18px;
@@ -26,12 +32,16 @@ main {
     padding-left: 0;
     padding-right: 0;
 }
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: Raleway, Helvetica, Arial, sans-serif;
 }
-
-
 /* H1 Rules */
+
 h1 {
     color: white;
     font-weight: 100;
@@ -53,8 +63,8 @@ h1 {
         font-size: 5em;
     }
 }
-
 /* Paragraph Rules */
+
 p {
     color: white;
     line-height: 1.43;
@@ -67,13 +77,7 @@ p {
         max-width: 50%;
     }
 }
-@media (min-width: 992px) {
-    
-}
-@media (min-width: 1200px) {
-    
-}
-
+@media (min-width: 992px) {} @media (min-width: 1200px) {}
 /* "Get Yours Now" Button Rules */
 
 #getYours {
@@ -89,23 +93,34 @@ p {
         padding: 10px;
     }
     #getYours:hover {
-         background-color: #5d3027;
+        background-color: #5d3027;
     }
-    a:link, a:visited, a:hover {
+    a:link,
+    a:visited,
+    a:hover {
         color: white;
         text-decoration: none;
     }
 }
-
 /* Header Rules */
+
 header {
     padding: 20px;
     margin-top: 2.5rem;
-    background: brown; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(#391D18, #814236); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(#391D18, #814236); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#391D18, #814236); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#391D18, #814236); /* Standard syntax */
+    background: brown;
+    /* For browsers that do not support gradients */
+    
+    background: -webkit-linear-gradient(#391D18, #814236);
+    /* For Safari 5.1 to 6.0 */
+    
+    background: -o-linear-gradient(#391D18, #814236);
+    /* For Opera 11.1 to 12.0 */
+    
+    background: -moz-linear-gradient(#391D18, #814236);
+    /* For Firefox 3.6 to 15 */
+    
+    background: linear-gradient(#391D18, #814236);
+    /* Standard syntax */
 }
 @media (min-width: 768px) {
     header {
@@ -116,7 +131,6 @@ header {
         background-position: center bottom;
         background-size: cover;
     }
-
 }
 @media (min-width: 992px) {
     header {
@@ -128,7 +142,6 @@ header {
         background-image: url("../img/pencil-header-lg.jpg");
     }
 }
-
 /* Navigation Bar Rules */
 
 #navi {
@@ -145,11 +158,13 @@ header {
 #navi li {
     padding: 20px 3% 0px 10px;
 }
-#navi li, #navi ul {
+#navi li,
+#navi ul {
     display: inline;
     list-style: none;
 }
-#navi a:link, #navi a:visited{
+#navi a:link,
+#navi a:visited {
     color: #dfdfdf;
     text-decoration: none;
 }
@@ -167,8 +182,8 @@ header {
     float: right;
     margin-right: 20px;
 }
-
 /* Section and Section Flexbox Rules */
+
 section {
     margin: 2.5rem 3rem 1rem 3rem;
 }
@@ -191,7 +206,9 @@ h2 {
     flex-direction: column;
     justify-content: center;
     list-style: none;
-    -webkit-align-content: space-between; /* Safari */
+    -webkit-align-content: space-between;
+    /* Safari */
+    
     align-content: space-between;
 }
 .flex-item {
@@ -205,10 +222,14 @@ h2 {
     text-align: left;
     border: 1px solid #dfdfdf;
 }
+/*Features Code */
+
 @media (min-width: 768px) {
     #features .flex-container {
         flex-direction: row;
-        -webkit-flex-wrap: wrap; /* Safari */
+        -webkit-flex-wrap: wrap;
+        /* Safari */
+        
         flex-wrap: wrap;
     }
     #features .flex-item {
@@ -219,111 +240,140 @@ h2 {
 @media (min-width: 1200px) {
     #features .flex-container {
         flex-direction: row;
-        -webkit-flex-wrap: nowrap; /* Safari */
+        -webkit-flex-wrap: nowrap;
+        /* Safari */
+        
         flex-wrap: nowrap;
     }
     #features .flex-item {
         text-align: center;
     }
 }
-
-
-#features, #testimonials {
+#features,
+#testimonials {
     background-color: #f8f8f8;
     margin-top: 0px;
     margin-bottom: 0px;
 }
+/*Uses Code */
 
 #uses {
     background-color: #ebebeb;
     margin-top: 0px;
     margin-bottom: 0px;
 }
-
 @media (min-width: 992px) {
-    #uses .flex-container, #testimonials .flex-container {
+    #uses .flex-container,
+    #testimonials .flex-container {
         flex-direction: row;
-        -webkit-flex-wrap: wrap; /* Safari */
+        -webkit-flex-wrap: wrap;
+        /* Safari */
+        
         flex-wrap: wrap;
     }
     #uses .flex-item {
         text-align: center;
         flex-basis: 40%;
     }
-     #testimonials .flex-item {
-         flex-basis: 25%;
-     }
+    #testimonials .flex-item {
+        flex-basis: 25%;
+    }
 }
-
-#img1, #img2, #img3, #img4 {
+#img1,
+#img2,
+#img3,
+#img4 {
     background-size: 100% 150px;
     background-repeat: no-repeat;
     background-position: top;
 }
-
 #img1 {
-    background-image:url("../img/note-taking.jpg");
+    background-image: url("../img/note-taking.jpg");
 }
-
 #img2 {
-    background-image:url("../img/art.jpg");
+    background-image: url("../img/art.jpg");
 }
-
 #img3 {
-    background-image:url("../img/drafting.jpg");
+    background-image: url("../img/drafting.jpg");
 }
-
 #img4 {
-    background-image:url("../img/coloring.jpg");
+    background-image: url("../img/coloring.jpg");
 }
-
 svg {
     fill: #814236;
     height: 60px;
     float: left;
     padding: 10px 10px 40px 10px;
 }
-
 #uses .flex-item {
     text-align: left;
-    padding-top:160px;
+    padding-top: 160px;
 }
-
 @media (min-width: 768px) {
     svg {
         float: none;
     }
 }
-
 h3 {
     padding: 0;
     margin: 0;
 }
+/*Testimonials Code*/
 
-#testimonials .flex-item{
+#testimonials .flex-item {
     background-color: #f8f8f8;
     border: none;
 }
-
 #testimonials h3 {
     display: inline;
 }
-
 #testimonials span {
     color: #999999;
     font-size: 80%;
     padding-left: 5px;
 }
-
 #testimonials p {
     color: black;
     padding: 0 0 0 100px;
     margin: 0;
     max-width: 100%;
 }
-
 .gravatar {
     float: left;
     padding: 10px;
     border-radius: 100%;
+}
+/* Footer Code */
+
+#footer {
+    margin-top: 0px;
+    color: #eeeeee;
+    background-color: #391d18;
+    padding: 20px;
+}
+#footer a:link,
+#footer a:visited {
+    color: #aaaaaa;
+    text-decoration: none;
+}
+#footer a:hover {
+    color: #ffffff;
+}
+#footer p {
+    color: white;
+}
+#footer ul {
+    float: none;
+    padding: 0;
+}
+#footer li {
+    font-size: 20px;
+    display: inline;
+    list-style: none;
+    padding: 5px;
+}
+@media (min-width: 768px) {
+    #footer ul {
+        float: right;
+    }
 }
