@@ -180,7 +180,9 @@ h2 {
     padding-top: 60px;
 }
 .flex-container {
+    margin: 0;
     padding: 0px;
+    padding-bottom: 15px;
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -215,12 +217,12 @@ h2 {
     }
 }
 @media (min-width: 1200px) {
-    .flex-container {
+    #features .flex-container {
         flex-direction: row;
         -webkit-flex-wrap: nowrap; /* Safari */
         flex-wrap: nowrap;
     }
-    .flex-item {
+    #features .flex-item {
         text-align: center;
     }
 }
@@ -229,6 +231,34 @@ h2 {
 #features {
     background-color: #f8f8f8;
     margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#uses {
+    background-color: #ebebeb;
+    margin-top: 0px;
+}
+
+#img1, #img2, #img3, #img4 {
+    background-size: 100% 150px;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+#img1 {
+    background-image:url("../img/note-taking.jpg");
+}
+
+#img2 {
+    background-image:url("../img/art.jpg");
+}
+
+#img3 {
+    background-image:url("../img/drafting.jpg");
+}
+
+#img4 {
+    background-image:url("../img/coloring.jpg");
 }
 
 svg {
@@ -236,6 +266,11 @@ svg {
     height: 60px;
     float: left;
     padding: 10px 10px 40px 10px;
+}
+
+#uses .flex-item {
+    text-align: left;
+    padding-top:160px;
 }
 
 @media (min-width: 768px) {
