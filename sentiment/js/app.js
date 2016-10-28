@@ -36,7 +36,102 @@ function findSentimentWords(wordsArray){
     return sentimentWordMap;
 }
 
-console.log(findSentimentWords(extractWords("Amazingly, I prefer a #rainy day to #sunshine.")));
+// Function takes in an array of tweet data and returns an object that contains the data of interest 
+function analyzeTweets(tweetArray){
+    var analyzedInfoArray = []; // Format - [emotion: [percent of all tweets, [array of most common words in order]], emotion:...etc
+    var rawDataArray = []; // Format - [count of words, all words used]
+    var totalLength = 0;
+    tweetArray.forEach(function(currentTweetInfo){
+        var currentTweet = currentTweetInfo["text"];
+        var filteredTweetWordsArray = extractWords(currentTweet);
+        var tweetEmotions = findSentimentWords(filteredTweetWordsArray); // Array with emotions and words that correspond to it
+        var hashtags = hashtagFilterArray(currentTweetInfo.entities["hashtags"]); // hashtags is a list of hashtags for this specific emotion
+        totalLength = totalLength + filteredTweetWordsArray.length; // add to total amount of words included
+        for (var i = 0; i < _EMOTIONS.length; i ++){ // for each emotion we need to look at
+            // tweetEmotions[_EMOTIONS[i]]; // Represents the  words that correspond to the current emotion
+            var emotion = _EMOTIONS[i];
+            if (!(emotion in rawDataArray)){ // If the emotion isn't already a key in the analyzedInfoArray
+                rawDataArray[emotion] = []; // Then declare a new array for this emotion key
+                rawDataArray[emotion][0] = 0;
+                rawDataArray[emotion][1] = [];
+                rawDataArray[emotion][2] = [];
+            }
+            if (tweetEmotions[emotion] !== undefined){
+                rawDataArray[emotion][0] = rawDataArray[emotion][0] + tweetEmotions[emotion].length;
+                rawDataArray[emotion][1] = rawDataArray[emotion][1].concat(tweetEmotions[emotion]);
+                if (tweetEmotions[emotion].length > 0){ 
+                    rawDataArray[emotion][2] = rawDataArray[emotion][2].concat(hashtags); // add current tweet's hashtags to corresponding emotion
+                }
+            }
+        }
+    });
+    // Now the rawDataArray is complete in the format: [emotion: [int count of words, [string wordsused, string wordsused2..]...]
+    // Can now process the rawData into the analyzedInfoArray
+    for (var i = 0; i < _EMOTIONS.length; i ++){ // for each emotion we need to look at
+        var emotion = _EMOTIONS[i];
+        if (!(emotion in analyzedInfoArray)){ // If the emotion isn't already a key in the analyzedInfoArray
+            analyzedInfoArray[emotion] = []; // Then declare a new array for this emotion key
+            analyzedInfoArray[emotion][1] = [];
+            analyzedInfoArray[emotion][3] = [];
+        }
+        analyzedInfoArray[emotion][0] = rawDataArray[emotion][0] / totalLength * 100; // Calculate percentage of emotion and throw into array
+        analyzedInfoArray[emotion][1] = sortByFrequencyAndRemoveDuplicates(rawDataArray[emotion][1]); // Call on helper method from stackoverflow
+        analyzedInfoArray[emotion][2] = sortByFrequencyAndRemoveDuplicates(rawDataArray[emotion][2]);
+    }
+    // The returned object should contain the following information for each sentiment:
+    // The percentage of words across all tweets that have the sentiment
+    // The most common words across all tweets that have that sentiment (in order!)
+    // Returned array has the following format: 
+    // [emotion: [percent of all tweets, [array of most common words in order]], emotion:...etc
+    console.log(analyzedInfoArray);
+    return analyzedInfoArray;
+}
+
+// Helper method that takes in an array of hashtags for an individual tweet and a String of an emotion
+// Example of the format of the "tweetHashtags" array: [{ "indices": [9, 21], "text": "GeekGirlCon" }, ...]
+// Should return an array of Strings (hashtags)
+function hashtagFilterArray(tweetHashtags){
+    var hashtagArray = [];
+    if (tweetHashtags !== undefined){
+        for (var i = 0; i < tweetHashtags.length; i ++){ // For the number of hashtags are in the tweet
+            hashtagArray.push(tweetHashtags[i]["text"]); // Add the hashtag to the array
+        }
+    }
+    return hashtagArray;
+}
+
+// This function is copied from a user from Stackoverflow: 
+// http://stackoverflow.com/questions/3579486/sort-a-javascript-array-by-frequency-and-then-filter-repeats
+// Basically sorts by highest occurrence to lowest occurrence and filters out duplicates 
+function sortByFrequencyAndRemoveDuplicates(array) {
+    var frequency = {}, value;
+
+    // compute frequencies of each value
+    for(var i = 0; i < array.length; i++) {
+        value = array[i];
+        if(value in frequency) {
+            frequency[value]++;
+        }
+        else {
+            frequency[value] = 1;
+        }
+    }
+
+    // make array from the frequency object to de-duplicate
+    var uniques = [];
+    for(value in frequency) {
+        uniques.push(value);
+    }
+
+    // sort the uniques array in descending order by frequency
+    function compareFrequency(a, b) {
+        return frequency[b] - frequency[a];
+    }
+
+    return uniques.sort(compareFrequency);
+}
+
+analyzeTweets(_SAMPLE_TWEETS);
 
 
 
