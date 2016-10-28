@@ -2,6 +2,7 @@
 
 // Global variables
 var _EMOTIONS = ["positive", "negative", "anger", "anticipation", "disgust", "fear", "joy", "sadness", "surprise", "trust"];
+var inputValue;
 
 // Function that takes in a String tweet and returns an array of individual lowercase words
 function extractWords(tweet){
@@ -135,11 +136,12 @@ function sortByFrequencyAndRemoveDuplicates(array) {
 // Function that displays statistics to the page with the passed in data array
 // Passed in array has the following format: 
 // [emotion: [percent of all tweets, [array of most common words in order]], emotion:...etc
-function showStatistics(tweetDataArray) {
+function showStatistics(tweetDataArray){
+    $('tbody').empty;
     for(var i = 0; i < _EMOTIONS.length; i ++){
         var emotion = _EMOTIONS[i];
         var currentEmotionRow = $('<tr></tr>');
-        $('thead').append(currentEmotionRow);
+        $('tbody').append(currentEmotionRow);
         $(currentEmotionRow).append('<th>' + emotion + '</th>');
         var percentTweets = numeral(tweetDataArray[emotion][0]).format('0.00') + '%';
         $(currentEmotionRow).append('<th>' + percentTweets + '</th>');
@@ -153,10 +155,26 @@ function showStatistics(tweetDataArray) {
     }
 }
 
-console.log(showStatistics(analyzeTweets(_SAMPLE_TWEETS)));
+// This function use AJAX to request to download the file, analyze results by calling on analyzeTweets function, 
+// and then display results by calling on showStatistics method.
+function loadTweets(jsonFileURL){
+    fetch(jsonFileURL)
+    .then(function(response) {
+        return response.json(); // convert to JSON
+    }).then(function(body) {
+        // What to do with json file
+        showStatistics(analyzeTweets(body));
+    });
+}
+ 
+$('#searchButton').click(function(event) {
+    inputValue = document.getElementById("searchBox").value;
+    var urlString = 'https://faculty.washington.edu/joelross/proxy/twitter/timeline/?screen_name=' + inputValue + '&count=100';
+    loadTweets(urlString);
+});
 
 
-
+loadTweets('../data/tweets.json');
 
 
 
