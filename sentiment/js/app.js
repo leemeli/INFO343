@@ -59,7 +59,7 @@ function analyzeTweets(tweetArray){
             if (tweetEmotions[emotion] !== undefined){
                 rawDataArray[emotion][0] = rawDataArray[emotion][0] + tweetEmotions[emotion].length;
                 rawDataArray[emotion][1] = rawDataArray[emotion][1].concat(tweetEmotions[emotion]);
-                if (tweetEmotions[emotion].length > 0){ 
+                if (tweetEmotions[emotion].length > 0){ // If this tweet has this sentiment
                     rawDataArray[emotion][2] = rawDataArray[emotion][2].concat(hashtags); // add current tweet's hashtags to corresponding emotion
                 }
             }
@@ -83,7 +83,6 @@ function analyzeTweets(tweetArray){
     // The most common words across all tweets that have that sentiment (in order!)
     // Returned array has the following format: 
     // [emotion: [percent of all tweets, [array of most common words in order]], emotion:...etc
-    console.log(analyzedInfoArray);
     return analyzedInfoArray;
 }
 
@@ -131,7 +130,31 @@ function sortByFrequencyAndRemoveDuplicates(array) {
     return uniques.sort(compareFrequency);
 }
 
-analyzeTweets(_SAMPLE_TWEETS);
+// To test steps 1-3: console.log(analyzeTweets(_SAMPLE_TWEETS));
+
+// Function that displays statistics to the page with the passed in data array
+// Passed in array has the following format: 
+// [emotion: [percent of all tweets, [array of most common words in order]], emotion:...etc
+function showStatistics(tweetDataArray) {
+    for(var i = 0; i < _EMOTIONS.length; i ++){
+        var emotion = _EMOTIONS[i];
+        var currentEmotionRow = $('<tr></tr>');
+        $('thead').append(currentEmotionRow);
+        $(currentEmotionRow).append('<th>' + emotion + '</th>');
+        var percentTweets = numeral(tweetDataArray[emotion][0]).format('0.00') + '%';
+        $(currentEmotionRow).append('<th>' + percentTweets + '</th>');
+        var exampleWords = tweetDataArray[emotion][1].slice(0, 3).join(', '); 
+        $(currentEmotionRow).append('<th>' + exampleWords + '</th>');
+        var hashtagWords = tweetDataArray[emotion][2].slice(0, 3).join(', #');
+        if (hashtagWords.length > 0){
+            hashtagWords = '#' + hashtagWords;
+        } 
+        $(currentEmotionRow).append('<th>' + hashtagWords + '</th>');
+    }
+}
+
+console.log(showStatistics(analyzeTweets(_SAMPLE_TWEETS)));
+
 
 
 
