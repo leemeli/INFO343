@@ -173,7 +173,7 @@ $('#searchButton').click(function(event) {
     loadTweets(urlString);
 });
 
-loadTweets('../data/tweets.json');
+loadTweets('./data/tweets.json');
 
 
 
