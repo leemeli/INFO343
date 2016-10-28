@@ -137,7 +137,7 @@ function sortByFrequencyAndRemoveDuplicates(array) {
 // Passed in array has the following format: 
 // [emotion: [percent of all tweets, [array of most common words in order]], emotion:...etc
 function showStatistics(tweetDataArray){
-    $('tbody').empty;
+    $('tbody').empty('tr');
     for(var i = 0; i < _EMOTIONS.length; i ++){
         var emotion = _EMOTIONS[i];
         var currentEmotionRow = $('<tr></tr>');
@@ -173,8 +173,7 @@ $('#searchButton').click(function(event) {
     loadTweets(urlString);
 });
 
-
-loadTweets('../data/tweets.json');
+loadTweets('https://info343-au16.github.io/challenges-leemeli/sentiment/data/tweets.json');
 
 
 
