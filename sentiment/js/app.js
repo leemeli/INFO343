@@ -173,7 +173,7 @@ $('#searchButton').click(function(event) {
     loadTweets(urlString);
 });
 
-loadTweets('https://info343-au16.github.io/challenges-leemeli/sentiment/data/tweets.json');
+loadTweets('../data/tweets.json');
 
 
 
