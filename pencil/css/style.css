@@ -1,19 +1,379 @@
 /* general container element to constrain content width on wider screens */
+
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto; 
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
 @media (min-width: 768px) {
-    .container { width: 750px; } 
+    .container {
+        width: 750px;
+    }
 }
 @media (min-width: 992px) {
-    .container { width: 970px; } 
+    .container {
+        width: 970px;
+    }
 }
 @media (min-width: 1200px) {
-    .container { width: 1170px; } 
+    .container {
+        width: 1170px;
+    }
 }
-
-
 /* Your CSS rules go here */
+
+body {
+    font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+}
+main {
+    padding-left: 0;
+    padding-right: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Raleway, Helvetica, Arial, sans-serif;
+}
+/* H1 Rules */
+
+h1 {
+    color: white;
+    font-weight: 100;
+    margin: 0 0 0 0px;
+}
+@media (min-width: 768px) {
+    h1 {
+        color: black;
+        font-size: 3em;
+    }
+}
+@media (min-width: 992px) {
+    h1 {
+        font-size: 4em;
+    }
+}
+@media (min-width: 1200px) {
+    h1 {
+        font-size: 5em;
+    }
+}
+/* Paragraph Rules */
+
+p {
+    color: white;
+    line-height: 1.43;
+    margin-top: 0px;
+    margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+    p {
+        color: black;
+        max-width: 50%;
+    }
+}
+@media (min-width: 992px) {} @media (min-width: 1200px) {}
+/* "Get Yours Now" Button Rules */
+
+#getYours {
+    display: none;
+    margin: 0;
+}
+@media (min-width: 768px) {
+    #getYours {
+        display: block;
+        font-family: Raleway, Helvetica, Arial, sans-serif;
+        background-color: #814236;
+        border: #391d18;
+        padding: 10px;
+    }
+    #getYours:hover {
+        background-color: #5d3027;
+    }
+    a:link,
+    a:visited,
+    a:hover {
+        color: white;
+        text-decoration: none;
+    }
+}
+/* Header Rules */
+
+header {
+    padding: 20px;
+    margin-top: 2.5rem;
+    background: brown;
+    /* For browsers that do not support gradients */
+    
+    background: -webkit-linear-gradient(#391D18, #814236);
+    /* For Safari 5.1 to 6.0 */
+    
+    background: -o-linear-gradient(#391D18, #814236);
+    /* For Opera 11.1 to 12.0 */
+    
+    background: -moz-linear-gradient(#391D18, #814236);
+    /* For Firefox 3.6 to 15 */
+    
+    background: linear-gradient(#391D18, #814236);
+    /* Standard syntax */
+}
+@media (min-width: 768px) {
+    header {
+        padding: 100px 20px 20px 50px;
+        margin-top: 0px;
+        background-image: url("../img/pencil-header-sm.jpg");
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-size: cover;
+    }
+}
+@media (min-width: 992px) {
+    header {
+        background-image: url("../img/pencil-header-md.jpg");
+    }
+}
+@media (min-width: 1200px) {
+    header {
+        background-image: url("../img/pencil-header-lg.jpg");
+    }
+}
+/* Navigation Bar Rules */
+
+#navi {
+    z-index: 5;
+    color: white;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 1.9rem;
+    background-color: #391D18;
+    padding-top: 15px;
+}
+#navi li {
+    padding: 20px 3% 0px 10px;
+}
+#navi li,
+#navi ul {
+    display: inline;
+    list-style: none;
+}
+#navi a:link,
+#navi a:visited {
+    color: #dfdfdf;
+    text-decoration: none;
+}
+#navi a:hover {
+    color: white;
+}
+@media (min-width: 768px) {
+    #navi {
+        left: 50%;
+        z-index: -1;
+        width: 10%;
+    }
+}
+#shoppingCart {
+    float: right;
+    margin-right: 20px;
+}
+/* Section and Section Flexbox Rules */
+
+section {
+    margin: 2.5rem 3rem 1rem 3rem;
+}
+h2 {
+    font-variant: small-caps;
+    text-align: center;
+    padding: 2rem 0rem 0rem 0rem;
+    margin-top: 0;
+    padding-top: 60px;
+}
+.flex-container {
+    margin: 0;
+    padding: 0px;
+    padding-bottom: 15px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    list-style: none;
+    -webkit-align-content: space-between;
+    /* Safari */
+    
+    align-content: space-between;
+}
+.flex-item {
+    margin: 0.5rem;
+    background-color: white;
+    flex-grow: 1;
+    flex-basis: 0;
+    min-width: 200px;
+    padding: 15px;
+    border-radius: 3px;
+    text-align: left;
+    border: 1px solid #dfdfdf;
+}
+/*Features Code */
+
+@media (min-width: 768px) {
+    #features .flex-container {
+        flex-direction: row;
+        -webkit-flex-wrap: wrap;
+        /* Safari */
+        
+        flex-wrap: wrap;
+    }
+    #features .flex-item {
+        text-align: center;
+        flex-basis: 40%;
+    }
+}
+@media (min-width: 1200px) {
+    #features .flex-container {
+        flex-direction: row;
+        -webkit-flex-wrap: nowrap;
+        /* Safari */
+        
+        flex-wrap: nowrap;
+    }
+    #features .flex-item {
+        text-align: center;
+    }
+}
+#features,
+#testimonials {
+    background-color: #f8f8f8;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+/*Uses Code */
+
+#uses {
+    background-color: #ebebeb;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+@media (min-width: 992px) {
+    #uses .flex-container,
+    #testimonials .flex-container {
+        flex-direction: row;
+        -webkit-flex-wrap: wrap;
+        /* Safari */
+        
+        flex-wrap: wrap;
+    }
+    #uses .flex-item {
+        text-align: center;
+        flex-basis: 40%;
+    }
+    #testimonials .flex-item {
+        flex-basis: 25%;
+    }
+}
+#img1,
+#img2,
+#img3,
+#img4 {
+    background-size: 100% 150px;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+#img1 {
+    background-image: url("../img/note-taking.jpg");
+}
+#img2 {
+    background-image: url("../img/art.jpg");
+}
+#img3 {
+    background-image: url("../img/drafting.jpg");
+}
+#img4 {
+    background-image: url("../img/coloring.jpg");
+}
+svg {
+    fill: #814236;
+    height: 60px;
+    float: left;
+    padding: 10px 10px 40px 10px;
+}
+#uses .flex-item {
+    text-align: left;
+    padding-top: 160px;
+}
+@media (min-width: 768px) {
+    svg {
+        float: none;
+    }
+}
+h3 {
+    padding: 0;
+    margin: 0;
+}
+/*Testimonials Code*/
+
+#testimonials .flex-item {
+    background-color: #f8f8f8;
+    border: none;
+}
+#testimonials h3 {
+    display: inline;
+}
+#testimonials span {
+    color: #999999;
+    font-size: 80%;
+    padding-left: 5px;
+}
+#testimonials p {
+    color: black;
+    padding: 0 0 0 100px;
+    margin: 0;
+    max-width: 100%;
+}
+.gravatar {
+    float: left;
+    padding: 10px;
+    border-radius: 100%;
+}
+/* Footer Code */
+
+#footer {
+    margin-top: 0px;
+    color: #eeeeee;
+    background-color: #391d18;
+    padding: 20px;
+}
+#footer a:link,
+#footer a:visited {
+    color: #aaaaaa;
+    text-decoration: none;
+}
+#footer a:hover {
+    color: #ffffff;
+}
+#footer p {
+    color: white;
+}
+#footer ul {
+    float: none;
+    padding: 0;
+}
+#footer li {
+    font-size: 20px;
+    display: inline;
+    list-style: none;
+    padding: 5px;
+}
+@media (min-width: 768px) {
+    #footer ul {
+        float: right;
+    }
+}
