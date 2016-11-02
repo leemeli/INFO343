@@ -1,4 +1,14 @@
 body {
+    width: 100%;
     text-align: center;
 }
 
+.floatingCard {
+    display: inline-block;
+    border: 3px solid lightpink; 
+    background-size: cover;
+}
+
+span .sr-only .face-down {
+    display: none;
+}
